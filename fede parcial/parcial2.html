@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parcial</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="skins/vector.png" nameid="Vector" id="vector" />
+        </div>
+        <div class="buttons">
+            <button>Login</button>
+            <button>Sign Up</button>
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            <div class="left">
+                <img src="skins/_image_2.png" nameid="image 2" id="_image_2" />
+            </div>
+            <div class="right">
+                <div class="form-container">
+                    <h2>Formulario</h2>
+                    <input type="text" placeholder="DIRECCION">
+                </div>
+                <div class="form-container">
+                    <input type="date" id="desde" placeholder="Desde">
+                    <input type="date" id="hasta" placeholder="Hasta">
+                    <input type="text" id="total" placeholder="Total">
+                </div>
+                <div class="form-container">
+                    <button type="button" id="cancelar">CANCELAR</button>
+                    <button type="button" id="reservar">RESERVAR</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const desdeInput = document.getElementById("desde");
+        const hastaInput = document.getElementById("hasta");
+        const totalInput = document.getElementById("total");
+
+        // Función para calcular el total
+        function calcularTotal() {
+            const desde = new Date(desdeInput.value);
+            const hasta = new Date(hastaInput.value);
+            const diffTime = Math.abs(hasta - desde);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+            const total = diffDays * 10000;
+            totalInput.value = total;
+        }
+
+        // Event listener para calcular el total cuando cambian las fechas
+        desdeInput.addEventListener("change", calcularTotal);
+        hastaInput.addEventListener("change", calcularTotal);
+    });
+</script>
+    
+    <footer>
+        <p>Tu footer aquí</p>
+    </footer>
+</body>
+</html>

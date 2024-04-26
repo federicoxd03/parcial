@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">  
+<head>    
+    <title>Título de la WEB</title>    
+    <meta charset="UTF-8">
+    <meta name="title" content="Título de la WEB">
+    <meta name="description" content="Descripción de la WEB">    
+    <link href="estilos.css" rel="stylesheet">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <style>
+        header{background-color:yellow;} /* Código CSS */
+    </style> 
+    <script src="script.js"></script>  
+    <script type="text/javascript">
+        
+    </script> 
+</head>  
+<body>    
+    <a-scene>
+        <a-assets>
+            <img id="prueba" src="https://federicoxd03.github.io/parcial/Abstract_011_basecolor.jpg">
+        <a-assets-item id="model" src=" https://federicoxd03.github.io/parcial/scene.gltf">
+        </a-assets>
+        <a-entity position="0 0 -5">
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
+        </a-entity>
+        <a-entity gltf-model="#model" position="-70 0 10" scale="0.5 0.5 0.5">
+
+        </a-entity>
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+        <a-cylinder  position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+        <a-plane src="#prueba" position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+        <a-sky color="#ff0305"></a-sky>
+      </a-scene>    
+</body>  
+</html>
